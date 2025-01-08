@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>VW</title>
+        <link rel = "stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id = 'header'>
+            <div class="container">
+                <nav>
+                    <img src="images/logo-white.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Events</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#facilitators">Facilitators</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <!-- <i class="fa-solid fa-circle-xmark"></i> -->
+                        <i class="fas fa-times" onclick="closemenu()"></i>
+                    </ul>
+                    <!-- <i class="fa-solid fa-bars"></i> -->
+                    <i class="fas fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Embracing Eroticism <br>and Inner Landscapes</p>
+                </div>
+                
+            </div>
+        </div>
+        <!-- ------------about----------- -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/flower.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About <br><span>Vulnerability Whore</span></h1>
+                        <p>Using erotically explorative and somatically grounded practices, our wants and limits pave the way to leading life with a more whole self. </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Core Practice</p>
+                            <p class="tab-links" onclick="opentab('experience')">Core Values</p>
+                            <p class="tab-links" onclick="opentab('education')">VW Meaning</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Embody dignity through awareness</span><br>Using somatic practices as the framework, we can authentically feel and follow pleasure</li>
+                                <li><span>Strengthen connection through touch</span><br>With an opportunity to express eroticism with others</li>
+                                <li><span>Gain skills of empowerment and communication</span><br>Noticing, valuing, and trusting desires, having the courage to ask for what you want, and feeling safe enough to receive</li>
+                                <li><span>Build trust for yourself</span><br>Remaining present in a space where consensual energetic, sensual, sexual, and kinky touch are all welcome</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Authenticity</span><br>Embrace and celebrate genuine expression, encouraging individuals to be true to themselves without fear of judgment</li>
+                                <li><span>Empowerment</span><br>Foster an environment where individuals feel empowered to share their vulnerabilities, supporting personal growth and transformation</li>
+                                <li><span>Inclusivity</span><br>Promote a welcoming space that values diversity, ensuring everyone feels seen, heard, and valued</li>
+                                <li><span>Connection</span><br>Cultivate meaningful connections among individuals, emphasizing the power of vulnerability to strengthen relationships and foster community</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <p><span>As a "vulnerability whore" </span><br>I learn to embrace and celebrate my vulnerability as a strength. I am open, authentic, and unapologetically embrace my own vulnerabilities, and encourage others to do the same. By being transparent about my struggles, emotions, and imperfections I foster connection, empathy, and personal growth.</p>
+                            <!-- <ul>
+                                <li><span>2016</span><br>Design Web/App Interfaces</li>
+                                <li><span>2016</span><br>Web App Interfaces</li>
+                                <li><span>2014</span><br>Building apps</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- -------------portfolio------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Upcoming Events</h1>
+        <div class="work-list">
+            <!-- <div class="work">
+                <img src="images/CommunityGathering_im2.jpg">
+                <div class="layer">
+                    <h3>Community Gathering</h3>
+                    <p>January 9 <br>7-9pm <br>Seattle, WA</p>
+                    <a href="Events/CommunityGathering_1-9-2025.pdf"><i class="fa-solid fa-download"></i></a>
+                </div>
+            </div> -->
+            <div class="work">
+                <img src="images/CommunityGathering_im1.jpg">
+                <div class="layer">
+                    <h3>Community Gathering</h3>
+                    <p>Jan 9, 23 & Feb 6, 20 <br>7-9pm <br>Seattle, WA</p>
+                    <a href="Events/CommunityGatheringJan-Feb.pdf"><i class="fa-solid fa-download"></i></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/SunThruTrees.jpg">
+                <div class="layer">
+                    <h3>Overnight Workshop</h3>
+                    <p>March 7-10 <br>Gig Harbor, WA</p>
+                    <a href="Events/MarchWorkshop-2025.pdf"><i class="fa-solid fa-download"></i></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="calendar.html" class="btn">See Calendar</a>
+    </div>
+</div>
+<!-- -----------Services--------- -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-hammer"></i>
+                        <h2>Workshops</h2>
+                        <p>We create a container in a variety of workshops where people can explore their inner worlds, 
+                            connect with others, and learn about Vulnerability Whore</p>
+                        <a href="#contact">Contact us for more details</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-house"></i>
+                        <h2>Overnight Workshops</h2>
+                        <p>We create a container where using erotically explorative and somatically grounded practices, 
+                            our wants, fears, and limits pave the way to leading life with a more whole self. </p>
+                        <a href="#contact">Contact us for more details</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-door-closed"></i>
+                        <h2>Private Sessions</h2>
+                        <p>We specialize in creative approaches to your unique situation, 
+                            whether that is to overcome a challange, grow in a new way, or something else. 
+                            We work with individuals, couples, and more-somes. </p>
+                        <a href="#contact">Contact us for more details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <!-- ------------facilitators----------- -->
+        <div id="facilitators">
+            <div class="container">
+                <h1 class="sub-title">Facilitators</h1>
+                <div class="row">
+                    
+                    <div class="fac-col-1">
+                        <img src="images/headshot.png">
+                        <h1 class="sub-title">Julian</span></h1>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('J-bio')">About</p>
+                            <!-- <p class="tab-links" onclick="opentab('J-skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('J-experience')">Experience</p> -->
+                            <p class="tab-links" onclick="opentab('J-education')">Education/Experience</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="J-bio">
+                            <p>Julian (he/him) initially followed an academic route that culminated in a 
+                                PhD in physics (with a focus in biophysics and neuroscience), over a dozen 
+                                peer-reviewed publications, and the founding of an AI art authentication company. 
+                                Since taking a transformative course on the Wheel of Consent, he has redirected 
+                                his focus towards the power of vulnerability. Bringing the same critical awareness 
+                                and conscientious work ethic from academia, Julian now applies his skills to 
+                                interpersonal, self-reflective, and somatic work. His training in professional 
+                                cuddling, psilocybin facilitation, and meditation uniquely equips him to cultivate 
+                                meaningful connections and support others on journeys of self-discovery and personal 
+                                growth, helping them tap into their wants and access their limits.
+                            </p>
+                        </div>
+                        <!-- <div class="tab-contents" id="J-skills">
+                            <ul>
+                                <li><span>Placeholder</span><br>Placeholder</li>
+                                <li><span>Placeholder</span><br>Placeholder</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="J-experience">
+                            <ul>
+                                <li><span>2024 - current</span><br>Vulnerability Whore</li>
+                                <li><span>2021 - current</span><br>CloudSmiths</li>
+                                <li><span>2023 - current</span><br>Professional Cuddler at <a href="https://cuddlist.com/juliansmith/">Cuddlist</a> and <a href="https://cuddlesmith.org">Cuddlesmith</a></li>
+                            </ul>
+                        </div> -->
+                        <div class="tab-contents" id="J-education">
+                            <ul>
+                                <li><span>current</span><br>Professional Cuddler at <a href="https://cuddlist.com/juliansmith/">Cuddlist</a> and <a href="https://cuddlesmith.org">Cuddlesmith</a></li>
+                                <li><span>2024</span><br>Psilocybin Facilitator Training: <a href="https://www.synaptic.institute">Synaptic</a></li>
+                                <li><span>2024</span><br>10-day silent Vipassana Meditation Course</li>
+                                <li><span>2023</span><br><a href="https://www.schoolofconsent.org/like-a-pro">Like a Pro (Wheel of Consent)</a></li>
+                                <li><span>2023</span><br><a href="https://www.cuddlist.com">Cuddlist Training</a></li>
+                                <li><span>2020</span><br>Physics PhD</li>
+                            </ul>
+                        </div>
+                        <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
+                    </div>
+                    <div class="fac-col-2">
+                        <img src="images/Annabelle-square.jpeg">
+                        <h1 class="sub-title">Annabelle</h1>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('A-bio')">About</p>
+                            <!-- <p class="tab-links" onclick="opentab('A-skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('A-experience')">Experience</p> -->
+                            <p class="tab-links" onclick="opentab('A-education')">Education/Experience</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="A-bio">
+                            <p>Annabelle (she/her) has been teaching yoga and mindfulness for 5+ years and 
+                                seeks to find the merge between mindfulness and sex and intimacy. She works 
+                                with clients who experience a variety of presenting sexual/intimacy difficulties 
+                                that include trauma, and psychological/physiological concerns that affect how 
+                                they experience pleasure. Annabelle loves to use somatic work to move through 
+                                those processes and finds value in self-reflection and the wisdom of the body. 
+                                Annabelle has a background in women's studies, social work and sex therapy. 
+                                She is currently a social worker at Swedish Hospital and a yoga instructor. 
+                                Although Annabelle has a Masters in Clinical Social Work and Human Sexuality, 
+                                making her a trained Sex Therapist, she finds so much joy in working with groups 
+                                to uncover their desire and vulnerabilities. 
+                            </p>
+                        </div>
+                        <!-- <div class="tab-contents" id="A-skills">
+                            <ul>
+                                <li><span>Placeholder</span><br>Placeholder</li>
+                                <li><span>Placeholder</span><br>Placeholder</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="A-experience">
+                            <ul>
+                                <li><span>2024 - current</span><br>Vulnerability Whore</li>
+                                <li><span>2024 - current </span><br>Private Practice Sex Therapist</li>
+                                <li><span>2024 - current </span><br>Hospital Social Worker</li>
+                                <li><span>2021 - 2024 </span><br>Saint Bread</li>
+                            </ul>
+                        </div> -->
+                        <div class="tab-contents" id="A-education">
+                            <ul>
+                                <!-- <li><span>current </span><br>Private Practice Sex Therapist</li> -->
+                                <li><span>current </span><br>Yoga Instructor</li>
+                                <li><span>current </span><br>Hospital Social Worker</li>
+                                <li><span>2024</span><br><a href="https://www.schoolofconsent.org/like-a-pro">Like a Pro (Wheel of Consent)</a></li>
+                                <li><span>2024</span><br>Masters in Human Sexuality</li>
+                                <li><span>2024</span><br>Masters in Clinical Social Work</li>
+                                <li><span>2020</span><br>Yoga Teacher Alliance 200 hr Yoga Teacher Training</li>
+                            </ul>
+                        </div>
+                        <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- -----------Contact----------     -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i> info@vulnerabilitywhore.com</p>
+                        <p><i class="fa-solid fa-phone"></i> 206-414-8134</p>
+                        <div class="social-icons">
+                            <!-- <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a> -->
+                            <!-- <a href=""><i class="fa-brands fa-twitter-square"></i></a> -->
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <!-- <a href=""><i class="fa-brands fa-linkedin"></i></a> -->
+                        </div>
+                        <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright Vulnerability Whore. Made with <i class="fa-solid fa-heart"></i></p>
+            </div>
+        </div>
+ 
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname) {
+            // Find the closest facilitator column (either fac-col-1, fac-col-2, etc.) of the clicked tab link
+            const parentContainer = event.currentTarget.closest('.about-col-2, .fac-col-1, .fac-col-2');
+        
+            // Deselect all tab links and hide all tab contents within this specific container
+            const tabLinks = parentContainer.querySelectorAll('.tab-links');
+            const tabContents = parentContainer.querySelectorAll('.tab-contents');
+            
+            tabLinks.forEach(tabLink => tabLink.classList.remove('active-link'));
+            tabContents.forEach(tabContent => tabContent.classList.remove('active-tab'));
+        
+            // Activate the clicked tab link and corresponding tab content
+            event.currentTarget.classList.add('active-link');
+            parentContainer.querySelector(`#${tabname}`).classList.add('active-tab');
+        }
+    </script>
+    
+    <script>
+        var sidemenu =  document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFFbKJKznMyUa27fUXwRgl9UtIc-Kn8a4pnOMtH6m0KHk6MMPsg5soZQCZxn9rg04/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML = "Message sent succesfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },2000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    
+    </body>
+
+</html>
