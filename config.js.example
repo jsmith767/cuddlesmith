@@ -1,0 +1,7 @@
+// Copy this file to config.js and add your actual API key
+// config.js is gitignored and will not be committed
+const CONFIG = {
+    googleCalendarApiKey: 'YOUR_API_KEY_HERE',
+    calendarId: 'YOUR_CALENDAR_ID_HERE'
+};
+
