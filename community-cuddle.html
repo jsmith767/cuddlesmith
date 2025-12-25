@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Cuddle - CuddleSmith</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+</head>
+<body class="light-theme">
+    <div id="header" style="min-height: 30vh;">
+        <div class="container">
+            <nav class="site-nav">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#details">Details</a></li>
+                    <li><a href="#what-to-expect">What to Expect</a></li>
+                    <li><a href="#rsvp">RSVP</a></li>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="hero-content">
+                <h1 class="hero-title">Community Cuddle</h1>
+                <p class="hero-subtitle">A cozy, sober evening in the AGNIS dome</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="details" style="padding-top:40px;">
+        <div class="section-card">
+            <p class="lead">Winter Community Cuddle in AGNIS (Amphibious Geodesic Nexus and Ignited Space)</p>
+            <p>Join for a cozy, sober evening inside the AGNIS geodesic dome — foam pads, inverted fire above, and relaxed connection. We’ll start with a light, hour-long workshop, then ease into a consent-focused community cuddle. Warm, simple, and pressure-free.</p>
+        </div>
+    </div>
+
+    <div class="container" id="what-to-expect">
+        <div class="section-card">
+            <h2 class="section-subtitle">What to Expect</h2>
+            <ul style="list-style: disc; padding-left: 20px; line-height: 1.7;">
+                <li>Mini-workshop to warm up and set shared agreements.</li>
+                <li>Consent-forward, unstructured community cuddle space.</li>
+                <li>Cozy setup: foam pads, inverted fire overhead, relaxed flow.</li>
+                <li>Sober, pressure-free, connection-centered.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="rsvp" style="padding-bottom:60px;">
+        <div class="section-card">
+            <h2 class="section-subtitle">Logistics</h2>
+            <p>Location: Private residence (shared after RSVP)</p>
+            <p>What to bring: Comfy clothes, a water bottle, and soft energy.</p>
+            <p>Optional: Whole-food plant-based snacks to share; donations welcome.</p>
+            <p>RSVP: Yes—last minute is okay; no confirmation needed. Trusted friends welcome.</p>
+            <p>Host: Julian</p>
+            <a href="mailto:julian@cuddlesmith.com" class="btn btn2" style="margin-top:20px; display:inline-block;">RSVP / Questions</a>
+        </div>
+    </div>
+
+    <script>
+        var sidemenu =  document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>
+

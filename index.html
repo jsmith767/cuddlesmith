@@ -9,27 +9,51 @@
         <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- Floating Banner for Art of Gathering Workshop -->
+        <!--
+        <div id="aog-banner" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #BA0018;
+            color: white;
+            text-align: center;
+            padding: 0.25rem;
+            font-family: Book Antiqua;
+            font-size: 1rem;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            ">
+            <strong>The Art of Vulnerability Workshop - Whidbey Island, WA - Sept. 10-12</strong> |
+            <a href="/TheArtOfVulnerability.html" style="color: white; text-decoration: underline; font-weight: bold;">
+                Learn More →
+            </a> 
+
+            <span onclick="document.getElementById('aog-banner').style.display='none';" 
+                style="margin-left: 1rem; cursor: pointer; font-weight: bold;">✕</span>
+        </div>
+-->
         <div id = 'header'>
+            
             <div class="container">
-                <nav>
-                    <img src="images/logo-white.png" class="logo">
+                <nav class="site-nav">
                     <ul id="sidemenu">
-                        <li><a href="#header">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Events</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#facilitators">Facilitators</a></li>
+                        <li><a href="#services">Offerings</a></li>
+                        <li><a href="#cuddler">Julian</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <!-- <i class="fa-solid fa-circle-xmark"></i> -->
                         <i class="fas fa-times" onclick="closemenu()"></i>
                     </ul>
-                    <!-- <i class="fa-solid fa-bars"></i> -->
                     <i class="fas fa-bars" onclick="openmenu()"></i>
                 </nav>
-                <div class="header-text">
-                    <p>Embracing Eroticism <br>and Inner Landscapes</p>
+                <div class="hero-content">
+                    <h1 class="hero-title">CuddleSmith</h1>
+                    <p class="hero-subtitle">Platonic physical and emotional connection crafted for you.</p>
                 </div>
-                
             </div>
         </div>
         <!-- ------------about----------- -->
@@ -37,214 +61,356 @@
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
-                        <img src="images/flower.jpg">
+                        <img src="images/WomanTreeCrop.jpeg">
                     </div>
                     <div class="about-col-2">
-                        <h1 class="sub-title">About <br><span>Vulnerability Whore</span></h1>
-                        <p>Using erotically explorative and somatically grounded practices, our wants and limits pave the way to leading life with a more whole self. </p>
+                        <h1 class="sub-title">About <br><span>CuddleSmith</span></h1>
+                        <p>Consent-based touch and somatic practices that help you feel safe, seen, and deeply relaxed.</p>
                         <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')">Core Practice</p>
                             <p class="tab-links" onclick="opentab('experience')">Core Values</p>
-                            <p class="tab-links" onclick="opentab('education')">VW Meaning</p>
+                            <p class="tab-links" onclick="opentab('oncuddlesmith')">On "CuddleSmith"</p>
                         </div>
                         <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Embody dignity through awareness</span><br>Using somatic practices as the framework, we can authentically feel and follow pleasure</li>
-                                <li><span>Strengthen connection through touch</span><br>With an opportunity to express eroticism with others</li>
-                                <li><span>Gain skills of empowerment and communication</span><br>Noticing, valuing, and trusting desires, having the courage to ask for what you want, and feeling safe enough to receive</li>
-                                <li><span>Build trust for yourself</span><br>Remaining present in a space where consensual energetic, sensual, sexual, and kinky touch are all welcome</li>
-                            </ul>
+                            <p>Supporting discovery, pleasure, and integration of experience.<br><br>
+                            Seeking support and expertise as you navigate growth, healing, and inner clarity takes courage. In session, we slow down and create space for noticing, choice, and embodied presence.<br><br>
+                            My approach draws on a broad range of training and experience, creating a process that is adaptable to different needs, contexts, and ways of learning. It often strengthens a person's capacity for intimacy, clear communication, and integrity—both with themselves and with others.
+                            </p>
                         </div>
                         <div class="tab-contents" id="experience">
                             <ul>
                                 <li><span>Authenticity</span><br>Embrace and celebrate genuine expression, encouraging individuals to be true to themselves without fear of judgment</li>
                                 <li><span>Empowerment</span><br>Foster an environment where individuals feel empowered to share their vulnerabilities, supporting personal growth and transformation</li>
                                 <li><span>Inclusivity</span><br>Promote a welcoming space that values diversity, ensuring everyone feels seen, heard, and valued</li>
-                                <li><span>Connection</span><br>Cultivate meaningful connections among individuals, emphasizing the power of vulnerability to strengthen relationships and foster community</li>
+                                <li><span>Connection</span><br>Cultivate meaningful connections among individuals, emphasizing the power of vulnerability to strengthen relationships and foster community. We support each other through life's challenges with care and accountability</li>
+                                <!-- <li><span>Community</span><br>We cultivate a culture of deep connection, where we support each other through life's challenges with care and accountability</li> -->
                             </ul>
                         </div>
-                        <div class="tab-contents" id="education">
-                            <p><span>As a "vulnerability whore" </span><br>I learn to embrace and celebrate my vulnerability as a strength. I am open, authentic, and unapologetically embrace my own vulnerabilities, and encourage others to do the same. By being transparent about my struggles, emotions, and imperfections I foster connection, empathy, and personal growth.</p>
-                            <!-- <ul>
-                                <li><span>2016</span><br>Design Web/App Interfaces</li>
-                                <li><span>2016</span><br>Web App Interfaces</li>
-                                <li><span>2014</span><br>Building apps</li>
-                            </ul> -->
+                        <div class="tab-contents" id="oncuddlesmith">
+                            <p><span>On "CuddleSmith"</span><br>
+                            The name "CuddleSmith" is a playful blend of craft and care. Like a blacksmith shapes metal, a CuddleSmith shapes connection—through warmth, presence, and skillful, consent-based touch. The name honors the artistry and intentionality that goes into creating safe, nurturing, and transformative cuddle experiences. It’s about forging bonds, softening hearts, and celebrating the human need for comfort and belonging.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-<!-- -------------portfolio------ -->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">Upcoming Events</h1>
-        <div class="work-list">
-            <!-- <div class="work">
-                <img src="images/CommunityGathering_im2.jpg">
-                <div class="layer">
-                    <h3>Community Gathering</h3>
-                    <p>January 9 <br>7-9pm <br>Seattle, WA</p>
-                    <a href="Events/CommunityGathering_1-9-2025.pdf"><i class="fa-solid fa-download"></i></a>
-                </div>
-            </div> -->
-            <div class="work">
-                <img src="images/CommunityGathering_im1.jpg">
-                <div class="layer">
-                    <h3>Community Gathering</h3>
-                    <p>Jan 9, 23 & Feb 6, 20 <br>7-9pm <br>Seattle, WA</p>
-                    <a href="Events/CommunityGatheringJan-Feb.pdf"><i class="fa-solid fa-download"></i></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/SunThruTrees.jpg">
-                <div class="layer">
-                    <h3>Overnight Workshop</h3>
-                    <p>March 7-10 <br>Gig Harbor, WA</p>
-                    <a href="Events/MarchWorkshop-2025.pdf"><i class="fa-solid fa-download"></i></i></a>
+<!-- ------------cuddler----------- -->
+        <div id="cuddler">
+            <div class="container">
+                <h1 class="sub-title">Julian</h1>
+                <div class="row" style="justify-content: center;">
+                    <div class="fac-col-1" style="margin: 0 auto; float: none;">
+                        <img src="images/headshot.png">
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('J-bio')">About</p>
+                            <p class="tab-links" onclick="opentab('J-specialization')">Specializations</p>
+                            <p class="tab-links" onclick="opentab('J-education')">Education/Experience</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="J-bio">
+                            <p>My background spans academic research, somatic practice, and relational work. I earned a PhD in physics with a focus on neuroscience and published over a dozen peer-reviewed papers.<br><br>
+                            For more than a decade, I have facilitated cuddle sessions and studied consent-based touch, somatic awareness, and interpersonal dynamics. I completed formal training as a psychedelic facilitator, which deepened my understanding of preparation, integration, and the role of embodiment in meaningful inner work. Advanced professional training with the Wheel of Consent further shaped my orientation toward vulnerability, noticing, and choice.<br><br>
+                            I bring the same rigor, curiosity, and ethical attention from my academic and experiential background into this work. My approach emphasizes embodiment, noticing, and reflection as tools for personal growth and transformation, drawing on a wide range of perspectives to meet each client's unique needs.
+                            </p>
+                        </div>
+                        <div class="tab-contents" id="J-specialization">
+                            <div class="tab-titles" style="margin-top: 20px;">
+                                <p class="tab-links active-link" onclick="openNestedTab('J-psychedelic', this)">Psychedelic Preparation/Integration</p>
+                                <p class="tab-links" onclick="openNestedTab('J-energetic', this)">Energetic Touch</p>
+                                <p class="tab-links" onclick="openNestedTab('J-relational', this)">Relational Architect</p>
+                            </div>
+                            <div class="tab-contents active-tab" id="J-psychedelic">
+                                <p>I specialize in psychedelic preparation and integration, helping you cultivate somatic awareness, clarify intentions, and translate experiences into daily life. Sessions can include exploring pleasure, attending to sensation, reflecting on experience, or simply being present—whatever supports your process. This work fosters grounding, self-trust, and insight, and is fully personal and client-directed.
+                                </p>
+                            </div>
+                            <div class="tab-contents" id="J-energetic">
+                                <p>Touch is a fundamental way we connect with ourselves and others. Through erotically explorative and somatically grounded practices, we explore how sensation becomes a source of pleasure and connection. This work invites you to notice the subtle energetic exchanges that happen through touch—the way presence, intention, and awareness create pathways for deeper connection. We explore how your hands and body can become sources of pleasure and information, reclaiming the ability to take in sensation as data that can be enjoyed. This foundation supports sensuality, generosity, and integrity in how you relate to yourself and others.
+                                </p>
+                            </div>
+                            <div class="tab-contents" id="J-relational">
+                                <p>I work as a relational architect, creating both physical and metaphorical containers that support safety, exploration, and transformation. The physical container includes the space itself—thoughtfully arranged, comfortable, and conducive to presence. The metaphorical container encompasses the agreements, boundaries, and structures we co-create together. This includes clear communication about limits and desires, explicit consent practices, and frameworks that allow for authentic expression while maintaining safety. These containers become the foundation where vulnerability can flourish, where you can explore your wants and limits with curiosity rather than fear. Through this architectural approach, we build structures that support not just individual sessions, but lasting patterns of connection, communication, and integrity in your relationships.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-contents" id="J-education">
+                            <ul>
+                                <li><span>2025</span><br>Working with Groups: By the School of Consent</li>
+                                <li><span>2023-2024</span><br>Psilocybin Facilitator Training: Synaptic</li>
+                                <li><span>2024</span><br>10-day silent Vipassana Meditation Course</li>
+                                <li><span>2023</span><br>Like a Pro (Wheel of Consent)</li>
+                                <li><span>2023</span><br>Cuddlist Training</li>
+                                <li><span>2020</span><br>Physics PhD with Neuroscience Focus: Dissertation</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="calendar.html" class="btn">See Calendar</a>
+<!-- ------------testimonials----------- -->
+<div id="testimonials">
+    <div class="container">
+        <h1 class="sub-title">Testimonials</h1>
+        <div class="testimonials-carousel-wrapper">
+            <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonials-carousel">
+                <div class="testimonials-track" id="testimonials-track">
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "I was able to enjoy the physical touch with a depth of safety, tenderness and all around comfort which I have seldom been able to find, even with romantic partners."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "Cuddling sessions with Julian have done more for my mental health than most of the talk therapy or meds that I've taken in my life"
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "Julian has a talent for touch! I was a little nervous for my first cuddle session, but Julian was nothing but professional and affirming."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "Julian creates a space that is welcoming and accepting in a way that's really healing."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "I felt very supported both emotionally and physically."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "In addition to receiving some skillful cuddles, I was also encouraged to explore my own needs throughout the session. I even had a synesthetic experience once I was able to fully let go."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "My session with Julian was my first time doing a professional cuddle session. He helped me feel safe throughout this new experience and empowered me to really vocalize my own comfort needs and desires throughout the session."
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "Mmmmmm"
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "You have really soft skin"
+                        </div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="quote">
+                            "You're the best person I've ever touched"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-next" onclick="moveCarousel(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
     </div>
 </div>
 <!-- -----------Services--------- -->
         <div id="services">
             <div class="container">
-                <h1 class="sub-title">Services</h1>
+                <h1 class="sub-title">Offerings</h1>
                 <div class="services-list">
                     <div>
-                        <i class="fa-solid fa-hammer"></i>
-                        <h2>Workshops</h2>
-                        <p>We create a container in a variety of workshops where people can explore their inner worlds, 
-                            connect with others, and learn about Vulnerability Whore</p>
-                        <a href="#contact">Contact us for more details</a>
+                        <i class="fa-solid fa-user"></i>
+                        <h2>Individual Cuddles</h2>
+                        <p>One-on-one sessions focused on nurturing, consent-based touch and presence. Experience deep relaxation, connection, and support in a safe, non-judgmental space.</p>
                     </div>
                     <div>
-                        <i class="fa-solid fa-house"></i>
-                        <h2>Overnight Workshops</h2>
-                        <p>We create a container where using erotically explorative and somatically grounded practices, 
-                            our wants, fears, and limits pave the way to leading life with a more whole self. </p>
-                        <a href="#contact">Contact us for more details</a>
+                        <i class="fa-solid fa-users"></i>
+                        <h2>Facilitated Group Cuddles</h2>
+                        <p>Guided group experiences that foster connection, communication, and community. Learn about boundaries, consent, and the power of platonic touch in a supportive group setting.</p>
                     </div>
                     <div>
-                        <i class="fa-solid fa-door-closed"></i>
-                        <h2>Private Sessions</h2>
-                        <p>We specialize in creative approaches to your unique situation, 
-                            whether that is to overcome a challange, grow in a new way, or something else. 
-                            We work with individuals, couples, and more-somes. </p>
-                        <a href="#contact">Contact us for more details</a>
+                        <i class="fa-solid fa-fire"></i>
+                        <h2>Inverted Fire Cuddles</h2>
+                        <p>A unique, playful, and transformative group cuddle experience inspired by the element of fire. Explore new ways of connecting, releasing, and igniting joy through creative touch and movement.</p>
                     </div>
                 </div>
             </div>
         </div>
- <!-- ------------facilitators----------- -->
-        <div id="facilitators">
-            <div class="container">
-                <h1 class="sub-title">Facilitators</h1>
-                <div class="row">
-                    
-                    <div class="fac-col-1">
-                        <img src="images/headshot.png">
-                        <h1 class="sub-title">Julian</span></h1>
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('J-bio')">About</p>
-                            <!-- <p class="tab-links" onclick="opentab('J-skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('J-experience')">Experience</p> -->
-                            <p class="tab-links" onclick="opentab('J-education')">Education/Experience</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="J-bio">
-                            <p>Julian (he/him) initially followed an academic route that culminated in a 
-                                PhD in physics (with a focus in biophysics and neuroscience), over a dozen 
-                                peer-reviewed publications, and the founding of an AI art authentication company. 
-                                Since taking a transformative course on the Wheel of Consent, he has redirected 
-                                his focus towards the power of vulnerability. Bringing the same critical awareness 
-                                and conscientious work ethic from academia, Julian now applies his skills to 
-                                interpersonal, self-reflective, and somatic work. His training in professional 
-                                cuddling, psilocybin facilitation, and meditation uniquely equips him to cultivate 
-                                meaningful connections and support others on journeys of self-discovery and personal 
-                                growth, helping them tap into their wants and access their limits.
-                            </p>
-                        </div>
-                        <!-- <div class="tab-contents" id="J-skills">
-                            <ul>
-                                <li><span>Placeholder</span><br>Placeholder</li>
-                                <li><span>Placeholder</span><br>Placeholder</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="J-experience">
-                            <ul>
-                                <li><span>2024 - current</span><br>Vulnerability Whore</li>
-                                <li><span>2021 - current</span><br>CloudSmiths</li>
-                                <li><span>2023 - current</span><br>Professional Cuddler at <a href="https://cuddlist.com/juliansmith/">Cuddlist</a> and <a href="https://cuddlesmith.org">Cuddlesmith</a></li>
-                            </ul>
-                        </div> -->
-                        <div class="tab-contents" id="J-education">
-                            <ul>
-                                <li><span>current</span><br>Professional Cuddler at <a href="https://cuddlist.com/juliansmith/">Cuddlist</a> and <a href="https://cuddlesmith.org">Cuddlesmith</a></li>
-                                <li><span>2024</span><br>Psilocybin Facilitator Training: <a href="https://www.synaptic.institute">Synaptic</a></li>
-                                <li><span>2024</span><br>10-day silent Vipassana Meditation Course</li>
-                                <li><span>2023</span><br><a href="https://www.schoolofconsent.org/like-a-pro">Like a Pro (Wheel of Consent)</a></li>
-                                <li><span>2023</span><br><a href="https://www.cuddlist.com">Cuddlist Training</a></li>
-                                <li><span>2020</span><br>Physics PhD</li>
-                            </ul>
-                        </div>
-                        <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
-                    </div>
-                    <div class="fac-col-2">
-                        <img src="images/Annabelle-square.jpeg">
-                        <h1 class="sub-title">Annabelle</h1>
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('A-bio')">About</p>
-                            <!-- <p class="tab-links" onclick="opentab('A-skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('A-experience')">Experience</p> -->
-                            <p class="tab-links" onclick="opentab('A-education')">Education/Experience</p>
-                        </div>
-                        <div class="tab-contents active-tab" id="A-bio">
-                            <p>Annabelle (she/her) has been teaching yoga and mindfulness for 5+ years and 
-                                seeks to find the merge between mindfulness and sex and intimacy. She works 
-                                with clients who experience a variety of presenting sexual/intimacy difficulties 
-                                that include trauma, and psychological/physiological concerns that affect how 
-                                they experience pleasure. Annabelle loves to use somatic work to move through 
-                                those processes and finds value in self-reflection and the wisdom of the body. 
-                                Annabelle has a background in women's studies, social work and sex therapy. 
-                                She is currently a social worker at Swedish Hospital and a yoga instructor. 
-                                Although Annabelle has a Masters in Clinical Social Work and Human Sexuality, 
-                                making her a trained Sex Therapist, she finds so much joy in working with groups 
-                                to uncover their desire and vulnerabilities. 
-                            </p>
-                        </div>
-                        <!-- <div class="tab-contents" id="A-skills">
-                            <ul>
-                                <li><span>Placeholder</span><br>Placeholder</li>
-                                <li><span>Placeholder</span><br>Placeholder</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="A-experience">
-                            <ul>
-                                <li><span>2024 - current</span><br>Vulnerability Whore</li>
-                                <li><span>2024 - current </span><br>Private Practice Sex Therapist</li>
-                                <li><span>2024 - current </span><br>Hospital Social Worker</li>
-                                <li><span>2021 - 2024 </span><br>Saint Bread</li>
-                            </ul>
-                        </div> -->
-                        <div class="tab-contents" id="A-education">
-                            <ul>
-                                <!-- <li><span>current </span><br>Private Practice Sex Therapist</li> -->
-                                <li><span>current </span><br>Yoga Instructor</li>
-                                <li><span>current </span><br>Hospital Social Worker</li>
-                                <li><span>2024</span><br><a href="https://www.schoolofconsent.org/like-a-pro">Like a Pro (Wheel of Consent)</a></li>
-                                <li><span>2024</span><br>Masters in Human Sexuality</li>
-                                <li><span>2024</span><br>Masters in Clinical Social Work</li>
-                                <li><span>2020</span><br>Yoga Teacher Alliance 200 hr Yoga Teacher Training</li>
-                            </ul>
-                        </div>
-                        <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
+<!-- -----------Sessions---------- -->
+<div id="sessions">
+    <div class="container">
+        <h1 class="sub-title">Sessions</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h2>Appointment Types</h2>
+                <ul>
+                    <li>In Call</li>
+                    <li>Out Call</li>
+                </ul>
+            </div>
+            <div>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h2>Cuddle Rates</h2>
+                <h3>Sliding Scale</h3>
+                <ul>
+                    <li>In Calls: $100-$150 per hour</li>
+                    <li>Out Calls: $125-$175 per hour</li>
+                </ul>
+            </div>
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <h2>Locations</h2>
+                <ul>
+                    <li>In Calls: In a beautiful old house near Ravenna</li>
+                    <li>Out Calls: Beautifully decorated yurt near Seward Park (Limited availability)</li>
+                    <li>Or a place you provide</li>
+                </ul>
+            </div>
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <h2>Response Time</h2>
+                <p>Typically less than 24 hours</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-notes-medical"></i>
+                <h2>Health</h2>
+                <ul>
+                    <li>If you have symptoms of any illness, please cancel our session and stay put. I’ll do the same.</li>
+                    <li>I am fully vaxxed and boosted</li>
+                    <li>I will not be asking or checking for Covid vax cards. I am willing and able to wear a mask upon your request.</li>
+                </ul>
+            </div>
+            <div>
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <h2>Cancellation Policy</h2>
+                <p>Please let me know ASAP if you need to reschedule. I request a fee of 100% of the session for last minute cancellations (fewer than 24 hours).</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-calendar-check"></i>
+                <h2>Availability</h2>
+                <p>Flexible schedule and I can often accommodate odd hours.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------------portfolio------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Upcoming Events</h1>
+        <div class="work-list featured">
+            <div class="work">
+                <img id="randomCommunityImage" src="images/Fire.png">
+                <div class="layer">
+                    <h3>Community Cuddle</h3>
+                    <p id="event-container"></p>
+                    <p id="time-container"></p>
+                    <p>Private residence</p>
+                    <div class="info-icon" onclick="window.location.href='community-cuddle.html'">
+                        <i class="fa-solid fa-circle-info"></i>
                     </div>
                 </div>
             </div>
         </div>
+        <a href="#embedded-calendar" class="btn">See Calendar</a>
+    </div>
+</div>
+<!-- ------------research----------- -->
+<div id="research">
+    <div class="container">
+        <h1 class="sub-title">Cuddle Research</h1>
+        <div class="research-list">
+            <div class="research-category">
+                <h2><i class="fa-solid fa-book-open"></i> Published Articles</h2>
+                <ul>
+                    <li><i class="fa-solid fa-file-lines"></i> <a href="https://journals.sagepub.com/doi/10.1177/08912416221100581" target="_blank">Touch Me if You Can: Intimate Bodies at Cuddle Parties</a></li>
+                    <li><i class="fa-solid fa-file-lines"></i> <a href="https://www.vr-elibrary.de/doi/10.13109/zptm.2005.51.1.57" target="_blank">Oxytocin, a mediator of anti-stress, well-being, social interaction, growth and healing</a></li>
+                    <li><i class="fa-solid fa-file-lines"></i> <a href="https://pubmed.ncbi.nlm.nih.gov/9924739/" target="_blank">Oxytocin may mediate the benefits of positive social interaction and emotions</a></li>
+                    <li><i class="fa-solid fa-file-lines"></i> <a href="https://pubmed.ncbi.nlm.nih.gov/15740822/" target="_blank">More frequent partner hugs and higher oxytocin levels are linked to lower blood pressure and heart rate in premenopausal women</a></li>
+                    <!-- New articles below -->
+                    <li><span>🧬</span> <i class="fa-solid fa-file-lines"></i> <a href="https://pubmed.ncbi.nlm.nih.gov/18842740/" target="_blank">Warm Touch & Oxytocin – Ditzen et al., 2007</a></li>
+                    <li><span>💤</span> <i class="fa-solid fa-file-lines"></i> <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jsr.14174" target="_blank">Social Touch & Sleep Quality – Xie et al., 2024</a></li>
+                    <li><span>😌</span> <i class="fa-solid fa-file-lines"></i> <a href="https://pubmed.ncbi.nlm.nih.gov/35757667/" target="_blank">Self-Soothing Touch & Cortisol – Lass-Hennemann et al., 2022 (PubMed)</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9216399/" target="_blank">Full Text</a></li>
+                    <li><span>🌟</span> <i class="fa-solid fa-file-lines"></i> <a href="https://elifesciences.org/articles/81241" target="_blank">Affectionate Touch & Well-Being – eLife, 2022</a></li>
+                    <li><span>💗</span> <i class="fa-solid fa-file-lines"></i> <a href="https://pubmed.ncbi.nlm.nih.gov/17499441/" target="_blank">Partner Massage & Stress Buffering – Ditzen et al., 2007</a></li>
+                    <li><span>⚙️</span> <i class="fa-solid fa-file-lines"></i> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10229112/" target="_blank">Oxytocin and Touch in Stress Regulation – 2021</a></li>
+                    <li><span>⚙️</span> <i class="fa-solid fa-file-lines"></i> <a href="https://www.mdpi.com/1660-4601/18/9/4695" target="_blank">Psychological Functions of Social Touch – 2021 (MDPI)</a></li>
+                    <li><span>⚙️</span> <i class="fa-solid fa-file-lines"></i> <a href="https://link.springer.com/article/10.1007/s40750-016-0052-x" target="_blank">Neurobiology of Social Safety – 2016</a></li>
+                </ul>
+            </div>
+            <div class="research-category">
+                <h2><i class="fa-solid fa-film"></i> Video Documentaries</h2>
+                <ul>
+                    <li><i class="fa-brands fa-youtube"></i> <a href="https://www.youtube.com/watch?v=NOazEIijXTo" target="_blank">How does touch affect our mental and physical health?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+#research .container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.research-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start;
+}
+.research-category {
+    flex: 1 1 350px;
+    min-width: 300px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px 28px 18px 28px;
+    margin-bottom: 20px;
+}
+.research-category h2 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #BA0018;
+    font-family: 'Book Antiqua', serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.research-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+.research-category li {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.research-category a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.research-category a:hover {
+    color: #BA0018;
+}
+.research-category i.fa-file-lines {
+    color: #BA0018;
+}
+.research-category i.fa-youtube {
+    color: #c4302b;
+}
+.research-category i.fa-film {
+    color: #BA0018;
+}
+</style>
 
 <!-- -----------Contact----------     -->
         <div id="contact">
@@ -252,12 +418,12 @@
                 <div class="row">
                     <div class="contact-left">
                         <h1 class="sub-title">Contact</h1>
-                        <p><i class="fa-solid fa-paper-plane"></i> info@vulnerabilitywhore.com</p>
+                        <p><i class="fa-solid fa-paper-plane"></i> julian@cuddlesmith.com</p>
                         <p><i class="fa-solid fa-phone"></i> 206-414-8134</p>
                         <div class="social-icons">
                             <!-- <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a> -->
                             <!-- <a href=""><i class="fa-brands fa-twitter-square"></i></a> -->
-                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <!-- <a href=""><i class="fa-brands fa-instagram"></i></a> -->
                             <!-- <a href=""><i class="fa-brands fa-linkedin"></i></a> -->
                         </div>
                         <!-- <a href="images/CV.pdf" download class="btn btn2">Download CV</a> -->
@@ -266,6 +432,8 @@
                         <form name="submit-to-google-sheet">
                             <input type="text" name="Name" placeholder="Your Name" required>
                             <input type="email" name="Email" placeholder="Your Email" required>
+                            <input type="tel" name="Phone" placeholder="Your Phone">
+                            <input type="text" name="Subscribe" placeholder="Subscribe to our mailing list?">
                             <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
@@ -296,6 +464,42 @@
             // Activate the clicked tab link and corresponding tab content
             event.currentTarget.classList.add('active-link');
             parentContainer.querySelector(`#${tabname}`).classList.add('active-tab');
+            
+            // If opening Specializations tab, automatically open the first nested tab
+            if (tabname === 'J-specialization') {
+                const specializationContainer = document.getElementById('J-specialization');
+                const firstNestedTab = specializationContainer.querySelector('#J-psychedelic');
+                const firstNestedLink = specializationContainer.querySelector('.tab-links');
+                
+                if (firstNestedTab && firstNestedLink) {
+                    // Reset all nested tabs
+                    const nestedTabLinks = specializationContainer.querySelectorAll('.tab-links');
+                    const nestedTabContents = specializationContainer.querySelectorAll('.tab-contents');
+                    
+                    nestedTabLinks.forEach(tabLink => tabLink.classList.remove('active-link'));
+                    nestedTabContents.forEach(tabContent => tabContent.classList.remove('active-tab'));
+                    
+                    // Activate first nested tab
+                    firstNestedLink.classList.add('active-link');
+                    firstNestedTab.classList.add('active-tab');
+                }
+            }
+        }
+        
+        function openNestedTab(tabname, element) {
+            // Find the J-specialization container
+            const specializationContainer = document.getElementById('J-specialization');
+            
+            // Deselect all nested tab links and hide all nested tab contents
+            const nestedTabLinks = specializationContainer.querySelectorAll('.tab-links');
+            const nestedTabContents = specializationContainer.querySelectorAll('.tab-contents');
+            
+            nestedTabLinks.forEach(tabLink => tabLink.classList.remove('active-link'));
+            nestedTabContents.forEach(tabContent => tabContent.classList.remove('active-tab'));
+        
+            // Activate the clicked nested tab link and corresponding tab content
+            element.classList.add('active-link');
+            specializationContainer.querySelector(`#${tabname}`).classList.add('active-tab');
         }
     </script>
     
@@ -309,23 +513,275 @@
             sidemenu.style.right = "-200px";
         }
     </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFFbKJKznMyUa27fUXwRgl9UtIc-Kn8a4pnOMtH6m0KHk6MMPsg5soZQCZxn9rg04/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-    
-        form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {msg.innerHTML = "Message sent succesfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },2000)
-                form.reset()
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6y3Qxi2D9P10MSsStIpOe4T0bXo8Ghwoinmemi216l117w9Cj_VgobvtH8Ie3Tb8/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+    const submitButton = document.querySelector('.btn2'); // Change this to select your submit button
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        // Change button text to indicate submission
+        submitButton.innerHTML = "Submitting...";
+        submitButton.disabled = true; // Disable the button to prevent multiple submissions
+
+        // Immediately submit the form data
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Message sent successfully. We'll be getting back to you shortly! <br>Add julian@cuddlesmith.com to your contact list. Sometimes your email services thinks we're spam!";
+                // Keep the message visible for a longer duration (e.g., 5000 ms)
+                setTimeout(function() {
+                    msg.innerHTML = ""; // Clear message after the specified duration
+                }, 10000); // Change 5000 to your desired duration
+
+                // Immediately reset the form and button
+                form.reset(); // Reset the form
+                submitButton.innerHTML = "Submit"; // Reset button text
+                submitButton.disabled = false; // Re-enable the button
             })
-            .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "Error sending message. Please try again.";
+                
+                // Reset button text and enable it again after error
+                submitButton.innerHTML = "Submit"; // Reset button text
+                submitButton.disabled = false; // Re-enable the button
+            });
+    });
+</script>
+<script>
+async function fetchRecurringEventDates() {
+    const calendarId = 'e98c8cdd52ee5115c60ad53513496e3495da75b3595e14730a4e295bc17a908d@group.calendar.google.com'; 
+    const apiKey = 'REPLACED_API_KEY';
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&singleEvents=true&orderBy=startTime`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const now = new Date();
+        const eventName = "community cuddle"; // Filter events by this title (case-insensitive)
+        const events = data.items
+            .filter(event => (event.summary || '').toLowerCase().includes(eventName) && new Date(event.start.dateTime || event.start.date) > now)
+            .sort((a,b) => new Date(a.start.dateTime || a.start.date) - new Date(b.start.dateTime || b.start.date));
+
+        if (!events.length) {
+            document.getElementById('event-container').innerText = "No upcoming events";
+            document.getElementById('time-container').innerText = "";
+            return;
+        }
+
+        const first = events[0];
+        const rawStart = first.start?.dateTime || first.start?.date;
+        const rawEnd = first.end?.dateTime || first.end?.date;
+
+        // Date
+        const startDateObj = new Date(rawStart);
+        const dateString = startDateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+        // Time
+        let timeString = "";
+        if (!first.start?.dateTime || !first.end?.dateTime) {
+            timeString = "All day";
+        } else {
+            const startObj = new Date(first.start.dateTime);
+            const endObj = new Date(first.end.dateTime);
+
+            const formatTime = (d) => d.toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+
+            timeString = `${formatTime(startObj)} – ${formatTime(endObj)}`;
+        }
+
+        // Display the strings in the HTML page (only the next event)
+        document.getElementById('event-container').innerText = dateString;
+        document.getElementById('time-container').innerText = timeString;
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+window.onload = fetchRecurringEventDates;
+</script>
+
+<script>
+// Testimonials Carousel - Move one item at a time
+(function() {
+    'use strict';
+    
+    let currentIndex = 0;
+    const itemsPerView = 3;
+    let isAnimating = false;
+    
+    const track = document.getElementById('testimonials-track');
+    const carousel = document.querySelector('.testimonials-carousel');
+    const testimonials = document.querySelectorAll('.testimonial-box');
+    const totalItems = testimonials.length;
+    
+    function getItemWidth() {
+        if (!carousel || !testimonials.length) return 0;
+        const carouselWidth = carousel.offsetWidth;
+        const gap = 30; // gap between items
+        return (carouselWidth - (gap * (itemsPerView - 1))) / itemsPerView + gap;
+    }
+    
+    function updateCarousel(instant = false) {
+        if (!track || !carousel) return;
+        
+        // Don't allow scrolling past the point where we can show 3 items
+        const maxIndex = Math.max(0, totalItems - itemsPerView);
+        
+        // Infinite loop - wrap around smoothly
+        if (currentIndex < 0) {
+            currentIndex = maxIndex;
+        } else if (currentIndex > maxIndex) {
+            currentIndex = 0;
+        }
+        
+        const itemWidth = getItemWidth();
+        const translateX = -currentIndex * itemWidth;
+        
+        if (instant) {
+            track.style.transition = 'none';
+        } else {
+            track.style.transition = 'transform 0.5s ease';
+        }
+        
+        track.style.transform = `translateX(${translateX}px)`;
+        
+        // Update dots based on which "page" we're on (every 3 items)
+        const dots = document.querySelectorAll('.dot');
+        const totalPages = Math.ceil(totalItems / itemsPerView);
+        const currentPage = Math.min(Math.floor(currentIndex / itemsPerView), totalPages - 1);
+        dots.forEach((dot, index) => {
+            if (index < totalPages) {
+                dot.classList.toggle('active', index === currentPage);
+            }
+        });
+        
+        if (instant) {
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease';
+            }, 50);
+        }
+    }
+    
+    function moveCarousel(direction) {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        const maxIndex = Math.max(0, totalItems - itemsPerView);
+        
+        currentIndex += direction;
+        
+        // If we've gone past the end, loop to beginning
+        if (currentIndex > maxIndex) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = maxIndex;
+        }
+        
+        updateCarousel();
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+    
+    function goToSlide(pageIndex) {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        currentIndex = pageIndex * itemsPerView;
+        updateCarousel();
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+    
+    function initDots() {
+        const dotsContainer = document.getElementById('carousel-dots');
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = '';
+        const totalPages = Math.ceil(totalItems / itemsPerView);
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Initialize
+    function init() {
+        initDots();
+        updateCarousel(true);
+        
+        // Make functions globally accessible
+        window.moveCarousel = moveCarousel;
+        window.goToSlide = goToSlide;
+    }
+    
+    // Wait for DOM and layout
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(init, 100);
+        });
+    } else {
+        setTimeout(init, 100);
+    }
+    
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            currentIndex = 0;
+            initDots();
+            updateCarousel(true);
+        }, 250);
+    });
+})();
+</script>
+
+<!-- Embedded Calendar -->
+<div id="embedded-calendar" class="container" style="padding-bottom:60px;">
+    <h1 class="sub-title">Calendar</h1>
+    <div style="position:relative;padding-top:10px;">
+        <iframe 
+            src="https://calendar.google.com/calendar/embed?src=e98c8cdd52ee5115c60ad53513496e3495da75b3595e14730a4e295bc17a908d@group.calendar.google.com&ctz=America/Los_Angeles" 
+            style="border: 1px solid var(--highlight-color); width: 100%; height: 700px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.08);" 
+            frameborder="0" 
+            scrolling="no"></iframe>
+    </div>
+</div>
+
+<script>
+    // Single hero image for upcoming event
+    const communityImages = [
+        'images/Fire.png'
+    ];
+
+
+    // Force the single image on load
+    function setCommunityImage() {
+        const imageElement = document.getElementById('randomCommunityImage');
+        if (imageElement) {
+            imageElement.src = communityImages[0];
+        }
+    }
+
+    window.addEventListener('load', setCommunityImage);
+</script>
+
     
     </body>
 

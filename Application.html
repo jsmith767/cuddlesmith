@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Art of Vulnerability Application - VW</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+</head>
+    <body class="no-banner">
+        <!-- ------------title----------- -->
+        <div id="title-section">
+            <div class="container">
+                <div class="logo-container">
+                    <img src="images/logo-white.png" class="logo">
+    </div>
+                <h1 class="main-title" style="text-align: center;">The Art of Vulnerability</h1>
+                <h2 class="subtitle" style="text-align: center;">Application</h2>
+
+                <!-- <h3 class="required-note" style="text-align: center;">* Indicates required question</h3> -->
+            </div>
+            </div>
+
+        <!-- ------------application form----------- -->
+        <div id="application-form">
+            <div class="container">
+                <div class="application-content">
+                    <p>1) Read the <a href="TheArtOfVulnerability.html#about" class="guidelines-link">Agreements, Guidelines, and Who It's For</a></p>
+                    <p>2) Fill out the application below</a></p>
+                    <p>3) Send your $50 deposit via venmo to @SmithInPractice (last four 3982) with subject "The Art of Vulnerability Application" or email info@vulnerabilitywhore.com and inquire about an alternative payment method</p>
+                    <h3>Then</h3>
+                    <p>4) We will reach to you and schedule an interview </p>
+                    <p>5) If we are a good fit, you're in. We'll give you the link to make your payment. (If we are not a good fit, we will refund your application fee.)</p>
+                    <p class="required-note"><span class="required-asterisk">*</span> Indicates required question</p>
+                    
+                    <form name="submit-to-google-sheet">
+                        <!-- Agreement Checkbox -->
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agreement" required>
+                                <span>I have read the group guidelines and agree to adhere to them to my fullest ability <span class="required-asterisk">*</span></span>
+                            </label>
+            </div>
+
+                        <!-- Basic Information -->
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="Name" required>
+            </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="Email" required>
+            </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="Phone" required>
+            </div>
+
+                        <!-- Longer Form Questions -->
+                        <div class="form-group">
+                            <label for="draw">Tell us a little about what draws you to this workshop</label>
+                            <textarea id="draw" name="DrawToWorkshop" required></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="experience">Have you participated in any intentional circles, training or events? What were they?</label>
+                            <textarea id="experience" name="PriorExperience" required></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="hopes">What do you hope to gain from the weekend?</label>
+                            <textarea id="hopes" name="Hopes"></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="identities">Identities; is there anything about your identities that you would like us to know?</label>
+                            <textarea id="identities" name="Identities"></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="accessibility">Accessibility; Is there anything that would make this workshop more accessible to you?</label>
+                            <textarea id="accessibility" name="Accessibility"></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="growth">What kind of growth or healing are you looking for at this point in your life?</label>
+                            <textarea id="growth" name="Growth"></textarea>
+            </div>
+
+                        <div class="form-group">
+                            <label for="howHeard">How did you hear about us?</label>
+                            <textarea id="howHeard" name="HowHeard"></textarea>
+            </div>
+
+                        <button type="submit" class="btn btn2">Submit Application</button>
+                    </form>
+                    <span id="msg"></span>
+            </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright Vulnerability Whore. Made with <i class="fa-solid fa-heart"></i></p>
+            </div>
+        </div>
+
+    <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyy3Qsyk1ZRQRMoD2vsSU4waDA3CpfNyZwblXrrkfuhL7EqZUmTld04bTZwiT7uVnE/exec'
+            const form = document.forms['submit-to-google-sheet'];
+            const msg = document.getElementById("msg");
+            const submitButton = document.querySelector('.btn2');
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                submitButton.innerHTML = "Submitting...";
+                submitButton.disabled = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Application submitted successfully! We'll be in touch soon.<br>Add info@vulnerabilitywhore.com to your contact list to ensure you receive our response.";
+                        setTimeout(function() {
+                            msg.innerHTML = "";
+                        }, 1000);
+
+                        form.reset();
+                        submitButton.innerHTML = "Submit Application";
+                        submitButton.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        msg.innerHTML = "Error submitting application. Please try again.";
+                        
+                        submitButton.innerHTML = "Submit Application";
+                        submitButton.disabled = false;
+                    });
+            });
+    </script>
+</body>
+</html>

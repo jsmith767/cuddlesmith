@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - CuddleSmith</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav class="site-nav">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Events</a></li>
+                    <li><a href="index.html#services">Offerings</a></li>
+                    <li><a href="index.html#cuddler">Julian</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+    </div>
+
+    <div id="testimonials-page">
+        <div class="container">
+            <h1 class="sub-title">Testimonials</h1>
+            <div class="testimonials-list">
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "My session with Julian was my first time doing a professional cuddle session. He helped me feel safe throughout this new experience and empowered me to really vocalize my own comfort needs and desires throughout the session. Thanks to that, I was able to enjoy the physical touch with a depth of safety, tenderness and all around comfort which I have seldom been able to find, even with romantic partners."
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "Julian has a talent for touch! I was a little nervous for my first cuddle session, but Julian was nothing but professional and affirming. In addition to receiving some skillful cuddles, I was also encouraged to explore my own needs throughout the session. I even had a synesthetic experience once I was able to fully let go. I'm so grateful that Julian offers such a thoughtful space for connection - he is the perfect person for it."
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "The session was great! Still very positive vibes a few days later! Julian did an awesome job of creating a really safe and positive environment, and I felt very supported both emotionally and physically."
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "Cuddling sessions with you have done more for my mental health than most of the talk therapy or meds that I've taken in my life, and the effects last for days. It's been wonderful to feel the care I've been craving for years."
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "You create a space that is welcoming and accepting in a way that's really healing. I appreciate how intuitive you are at trying and offering different kinds of touch and affirmation and asking what I want."
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <div class="quote">
+                        "The idea of offering a customized physical touch session for feeling connection is just what the world needs. Julian made me feel heard and cared for and allowed me to tap into my inner cues of what I really needed or wanted in that moment. We had a phone call prior going over expectations and talked about boundaries and practiced saying no which I appreciated the attention to detail on creating a comforting environment. His overall professionalism was top-notch, but what makes Julian special is his innate ability to look into your heart, listen to you and provide an unequivocal love human to human. I will definitely be reaching out again and highly recommend everyone to gift themselves with a session with Julian."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <style>
+        #testimonials-page {
+            padding: 80px 0;
+        }
+        .testimonials-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-box {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .testimonial-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .testimonial-box .quote {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .testimonials-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
+

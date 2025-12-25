@@ -1,3 +1,16 @@
+/* Theme Variables */
+:root {
+    /* New light palette */
+    --bg-primary: #F7F7F7;          /* Off-white background */
+    --bg-secondary: #FFFFFF;        /* Card/background panels */
+    --text-primary: #333333;        /* Dark gray text */
+    --text-secondary: #555555;      /* Softer supporting text */
+    --accent-color: #FFB6C1;        /* Soft pink */
+    --highlight-color: #4A90E2;     /* Sky blue */
+    --purple-accent: #640064;       /* Brand purple */
+    --wellness-green: #50C878;      /* Optional highlight */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,15 +21,33 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #080808;
-    color: #fff; 
+    background: var(--bg-primary);
+    color: var(--text-primary); 
 }
 #header{
     width: 100%;
-    height: 100vh;
-    background-image:url(images/picnic.jpg);
-    background-size: cover;
-    background-position: center;
+    min-height: 50vh;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+.hero-content{
+    margin-top: 60px;
+    max-width: 520px;
+    padding: 0 4px;
+}
+.hero-title{
+    font-size: 46px;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 600;
+}
+.hero-subtitle{
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
 }
 .container{
     padding: 40px 7%;
@@ -24,20 +55,39 @@ body{
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    color: #fff;
+    width: 100%;
+    color: var(--text-primary);
+}
+.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    background: var(--bg-primary);
+    padding: 12px 7%;
+    box-shadow: none;
 }
 .logo{
     width: 120px;
 }
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    margin: 0;
+    padding: 0;
+}
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 0;
 }
 nav ul li a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 30px;
     position: relative; 
@@ -46,7 +96,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #BA0018;
+    background: #000;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -57,9 +107,9 @@ nav ul li a:hover:after{
     width: 100%;
 }
 .header-text{
-    margin-top: 10%;
+    margin-top: 1%;
     font-size: 30px;
-    color: #fff; 
+    color: var(--text-primary); 
     font-weight: bold;
 
 }
@@ -68,12 +118,12 @@ nav ul li a:hover:after{
     margin-top: 20px;
 }
 .header-text h1 span{
-    color: #640064;
+    color: var(--purple-accent);
 }
 /* ------------about--------- */
 #about{
     padding: 80px 0;
-    color: #ababab;
+    color: var(--text-secondary);
 }
 .row{
     display: flex;
@@ -92,12 +142,12 @@ nav ul li a:hover:after{
     flex-basis: 60%;
 }
 .about-col-2 h1 span{
-    color: #640064;
+    color: var(--purple-accent);
 }
 .sub-title{
     font-size: 60px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
 }
 .tab-titles{
     display: flex;
@@ -109,12 +159,13 @@ nav ul li a:hover:after{
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    color: var(--text-primary);
 }
 .tab-links::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #BA0018;
+    background: var(--highlight-color);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -123,20 +174,19 @@ nav ul li a:hover:after{
 .tab-links.active-link::after{
     width: 100%;
 }
-.tab-contents ul li{
+.tab-contents ul li {
     list-style: none;
     margin: 10px 0;
-
 }
 .tab-contents ul li span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents{
     display: none;
 }
 .tab-contents p span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents.active-tab{
@@ -153,7 +203,7 @@ nav ul li a:hover:after{
     margin-top: 50px;
 }
 .services-list div{
-    background: #36454F;
+    background: var(--bg-secondary);
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
@@ -171,13 +221,13 @@ nav ul li a:hover:after{
 }
 .services-list div a{
     text-decoration: none;
-    color: #fff;
+    color: var(--text-primary);
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
 }
 .services-list div:hover{
-    background: #BA0018;
+    background: var(--accent-color);
     transform: translateY(-10px);
 }
 /* ---------portfolio------ */
@@ -190,10 +240,21 @@ nav ul li a:hover:after{
     grid-gap: 40px;
     margin-top: 50px;    
 }
+.work-list.featured{
+    max-width: 50%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+}
+@media (max-width: 900px){
+    .work-list.featured{
+        max-width: 90%;
+    }
+}
 .work{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    /* border: 1px solid white;  */
 }
 .work img{
     width: 100%;
@@ -204,7 +265,7 @@ nav ul li a:hover:after{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6),#BA0018);
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75));
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -218,22 +279,54 @@ nav ul li a:hover:after{
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
+    color: #fff;
 }
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+.layer p{
+    margin: 6px 0;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
 }
 .layer a{
-    margin-top: 20px;
-    color: #BA0018;
+    margin-top: 16px;
+    color: var(--text-primary);
     text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
+    font-size: 16px;
+    padding: 10px 18px;
+    background: var(--accent-color);
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.info-icon{
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
-    text-align: center;
+    background: #fff;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin: 14px 0 6px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+.info-icon:hover{
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+.event-debug{
+    font-size: 12px;
+    color: #fff;
+    margin-top: 6px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
 }
 .work:hover img{
     transform: scale(1.1);
@@ -245,20 +338,209 @@ nav ul li a:hover:after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #BA0018;
+    border: 1px solid var(--accent-color);
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-primary);
     transition: background 0.5s;
 }
 .btn:hover{
-    background: #BA0018;
+    background: var(--accent-color);
+}
+/* ---------subtle link--------- */
+.subtle-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: inherit;  /* This will make it use the same color as its parent element */
+}
+
+.subtle-link:hover {
+    color: inherit;  /* This ensures the color doesn't change on hover */
+    opacity: 0.8;   /* Optional: slight opacity change on hover for feedback */
+}
+/* ------------testimonials----------- */
+#testimonials {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.testimonials-carousel-wrapper {
+    position: relative;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials-carousel {
+    overflow: hidden;
+    margin: 0 50px;
+    width: calc(100% - 100px);
+    position: relative;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+    will-change: transform;
+}
+
+.testimonial-box {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 0 0 calc((100% - 60px) / 3);
+    width: calc((100% - 60px) / 3);
+    min-width: calc((100% - 60px) / 3);
+    max-width: calc((100% - 60px) / 3);
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.testimonial-box-wide {
+    flex: 0 0 calc(66.666% - 15px);
+}
+
+@media screen and (max-width: 968px) {
+    .testimonial-box-wide {
+        flex: 0 0 calc(100% - 0px);
+    }
+}
+
+.testimonial-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.quote {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-secondary);
+    border: 2px solid var(--purple-accent);
+    color: var(--purple-accent);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--purple-accent);
+    color: white;
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--purple-accent);
+    width: 24px;
+    border-radius: 6px;
+}
+
+/* Responsive adjustments for testimonials */
+@media screen and (max-width: 968px) {
+    .testimonial-box {
+        flex: 0 0 calc(50% - 15px);
+    }
+    .testimonials-carousel {
+        margin: 0 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .testimonial-box {
+        flex: 0 0 100%;
+    }
+    .testimonials-carousel {
+        margin: 0 30px;
+    }
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+/* Testimonial Styles */
+.testimonial-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.testimonial-box {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-box .quote {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .testimonial-box {
+        flex: 1 1 100%;
+    }
 }
 /* ---------facilitators------ */
 #facilitators{
     padding: 80px 0;
-    color: #ababab;
+    color: var(--text-secondary);
     /* height: 140vh; */
 }
 .row{
@@ -280,12 +562,12 @@ nav ul li a:hover:after{
     border-radius: 15px;
 }
 .fac-col-1 h1 span{
-    color: #640064;
+    color: var(--purple-accent);
 }
 .sub-title{
     font-size: 60px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     text-align: center;
 }
 .tab-titles{
@@ -303,29 +585,28 @@ nav ul li a:hover:after{
     content: '';
     width: 0;
     height: 3px;
-    background: #BA0018;
+    background: var(--accent-color);
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -2px;
     transition: 0.5s;
 }
 .tab-links.active-link::after{
     width: 100%;
 }
-.tab-contents ul li{
+.tab-contents ul li {
     list-style: none;
     margin: 10px 0;
-
 }
 .tab-contents ul li span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents{
     display: none;
 }
 .tab-contents p span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents.active-tab{
@@ -344,12 +625,12 @@ nav ul li a:hover:after{
     border-radius: 15px;
 }
 .fac-col-2 h1 span{
-    color: #640064;
+    color: var(--purple-accent);
 }
 .sub-title{
     font-size: 60px;
     font-weight: 300;
-    color: #fff;
+    color: var(--text-primary);
 }
 .tab-titles{
     display: flex;
@@ -366,7 +647,7 @@ nav ul li a:hover:after{
     content: '';
     width: 0;
     height: 3px;
-    background: #BA0018;
+    background: var(--accent-color);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -375,24 +656,130 @@ nav ul li a:hover:after{
 .tab-links.active-link::after{
     width: 100%;
 }
-.tab-contents ul li{
+.tab-contents ul li {
     list-style: none;
     margin: 10px 0;
-
 }
 .tab-contents ul li span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents{
     display: none;
 }
 .tab-contents p span{
-    color: #008080; /*#b54769; */
+    color: var(--highlight-color);
     font-size: 14px;
 }
 .tab-contents.active-tab{
     display: block;
+}
+/* ------------application----------- */
+#application {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.application-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.application-content h2 {
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.application-steps {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.application-steps h3 {
+    color: var(--text-primary);
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.application-steps ol {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.application-steps li {
+    color: var(--text-primary);
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.note {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.confirmation-info {
+    margin: 30px 0;
+    padding: 20px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.scenarios {
+    margin-top: 20px;
+}
+
+.scenarios p {
+    margin-bottom: 15px;
+}
+
+.next-steps {
+    margin-top: 30px;
+}
+
+.next-steps h4 {
+    color: var(--text-primary);
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+#application .btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    background: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+#application .btn:hover {
+    transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+    .application-content {
+        padding: 10px;
+    }
+    
+    .application-steps {
+        padding: 20px;
+    }
+    
+    .application-content h2 {
+        font-size: 1.5em;
+    }
 }
 /* -------contact ----------*/
 .contact-left{
@@ -405,7 +792,7 @@ nav ul li a:hover:after{
     margin-top: 30px;
 }
 .contact-left p i{
-    color: #BA0018;
+    color: var(--accent-color);
     margin-right: 15px;
     font-size: 25px;
 }
@@ -416,17 +803,17 @@ nav ul li a:hover:after{
     text-decoration: none;
     font-size: 30px;
     margin-right: 15px;
-    color: #ababab;
+    color: var(--text-secondary);
     display: inline-block;
     transition: transform 0.5s;
 }
 .social-icons a:hover{
-    color: #BA0018;
+    color: var(--accent-color);
     transform:translateY(-5px)
 }
 .btn.btn2{
     display: inline-block;
-    background: #BA0018;
+    background: var(--accent-color);
 }
 .contact-right form{
     width: 100%;
@@ -435,10 +822,10 @@ form input,form textarea{
     width: 100%;
     border: 0;
     outline: none;
-    background: #36454F;
+    background: var(--bg-secondary);
     padding: 15px;
     margin: 15px 0;
-    color: #080808;
+    color: var(--text-primary);
     font-size: 18px;
     border-radius: 6px;
 }
@@ -452,12 +839,156 @@ form .btn2{
     width: 100%;
     text-align: center;
     padding: 25px 0;
-    background: #36454F;
+    background: var(--bg-secondary);
     font-weight: 300;
     margin-top: 20px;
 }
 .copyright i{
-    color: #640064;
+    color: var(--purple-accent);
+}
+
+/* Application Form Styles */
+#application-form {
+    padding: 0 0 80px 0;
+    margin-top: -100px;
+    background: var(--bg-primary);
+}
+
+.application-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.application-content p {
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.guidelines-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.guidelines-link:hover {
+    color: var(--highlight-color);
+}
+
+.required-note {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 1.3em;
+    line-height: 1.4;
+}
+
+/* Special styling for the checkbox label */
+.form-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1.1em;
+}
+
+.form-group input[type="checkbox"] {
+    margin-top: 4px;
+}
+
+#application-form form input,
+#application-form form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: var(--bg-secondary);
+    padding: 15px;
+    color: var(--text-primary);
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+#application-form form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#application-form .btn2 {
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    color: var(--text-primary);
+}
+
+#application-form .btn2:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#msg {
+    color: var(--highlight-color);
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+/* Add asterisk to required fields */
+.form-group label:has(+ input[required]),
+.form-group label:has(+ textarea[required]) {
+    position: relative;
+}
+
+.form-group label:has(+ input[required])::after,
+.form-group label:has(+ textarea[required])::after {
+    content: ' *';
+    color: var(--accent-color);
+}
+/* -----------------checkbox styling----------- */
+.checkbox-group {
+    margin: 20px 0;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    font-size: 1.1em;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 4px;
+    width: auto !important;
+}
+
+.checkbox-label span {
+    flex: 1;
+}
+.required-asterisk {
+    color: var(--accent-color);  /* This uses your theme's accent color (red) */
+    margin-left: 2px;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+/* -----------logo styling----------- */
+.logo {
+    max-width: 200px;  /* Adjust this value to your preferred logo size */
+    height: auto;
 }
 /* ---------------css for small screens------- */
 nav .fas{
@@ -465,14 +996,22 @@ nav .fas{
 }
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/picnic-mobile.jpeg);
-        /* background-size: auto;
-        height: auto; */
+        min-height: 50vh;
+        background: linear-gradient(160deg, #640064 0%, #4A90E2 60%, #FFB6C1 100%);
+    }
+    .hero-content{
+        margin-top: 40px;
+        padding: 22px 24px;
+    }
+    .hero-title{
+        font-size: 36px;
+    }
+    .hero-subtitle{
+        font-size: 18px;
     }
     .header-text{
-        /* margin-top: 10%; */
-        /* width: 40%; */
         font-size: 16px;
+        display: none;
     }
     .header-text h1{
         font-size: 30px;
@@ -482,7 +1021,7 @@ nav .fas{
         font-size: 25px;
     }
     nav ul{
-        background: #BA0018;
+        background: var(--accent-color);
         position: fixed;
         top: 0;
         right: -200px;
@@ -528,7 +1067,83 @@ nav .fas{
     }
 }
 #msg{
-    color: #008080;
+    color: var(--highlight-color);
     margin-top: -40px;
     display: block;
 }
+
+/* Add this after your existing #header styles */
+
+/* Class to hide the banner completely */
+.no-banner #header {
+    height: auto;
+    min-height: 0;
+    background-image: none;
+}
+
+/* Class to remove just the background image but keep the height */
+.no-banner-image #header {
+    background-image: none;
+}
+
+/* Optional: Class for a minimal banner */
+.minimal-banner #header {
+    height: auto;
+    min-height: 60px; /* Adjust this value as needed */
+    background-image: none;
+}
+
+/* Title Section */
+#title-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.main-title {
+    font-size: 120px; /* Increased from previous size */
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 3.5em; /* Increased from 2.5em */
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Add responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .main-title {
+        font-size: 80px;
+    }
+    
+    .subtitle {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 60px;
+    }
+    
+    .subtitle {
+        font-size: 2em;
+    }
+}
+
