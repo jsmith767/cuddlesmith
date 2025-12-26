@@ -299,8 +299,20 @@ nav ul li a:hover:after{
 }
 .service-card-link{
     text-decoration: none;
-    color: inherit;
+    color: var(--text-primary);
     display: block;
+}
+.service-card-link,
+.service-card-link * {
+    color: var(--text-primary);
+}
+.service-card-link:visited,
+.service-card-link:visited * {
+    color: var(--text-primary);
+}
+.service-card-link:hover,
+.service-card-link:hover * {
+    color: var(--text-primary);
 }
 .services-list div,
 .service-card-link > div{
@@ -311,17 +323,23 @@ nav ul li a:hover:after{
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
     cursor: pointer;
+    color: var(--text-primary);
 }
 .services-list div i,
 .service-card-link > div i{
     font-size: 50px;
     margin-bottom: 30px;
+    color: var(--text-primary);
 }
 .services-list div h2,
 .service-card-link > div h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
+    color: var(--text-primary);
+}
+.service-card-link > div p {
+    color: var(--text-primary);
 }
 .services-list div a{
     text-decoration: none;
@@ -580,6 +598,175 @@ nav ul li a:hover:after{
     background: var(--purple-accent);
     width: 24px;
     border-radius: 6px;
+}
+
+/* Space carousel styles */
+#space {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.space-carousel-wrapper {
+    position: relative;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.space-carousel {
+    overflow: hidden;
+    margin: 0 60px;
+    width: calc(100% - 120px);
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.space-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.space-image-box {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+}
+
+.space-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 70vh;
+    min-height: 500px;
+}
+
+@media screen and (max-width: 968px) {
+    .space-carousel {
+        margin: 0 40px;
+        width: calc(100% - 80px);
+    }
+    .space-image-box img {
+        min-height: 400px;
+        max-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .space-carousel {
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .space-image-box img {
+        min-height: 300px;
+        max-height: 50vh;
+    }
+}
+
+/* Agnis carousel styles */
+#agnis {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.agnis-carousel-wrapper {
+    position: relative;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.agnis-carousel {
+    overflow: hidden;
+    margin: 0 60px;
+    width: calc(100% - 120px);
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.agnis-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.agnis-media-box {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+}
+
+.agnis-media-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 70vh;
+    min-height: 500px;
+}
+
+.agnis-media-box video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 70vh;
+    min-height: 500px;
+    object-fit: contain;
+    transform: rotate(90deg);
+    pointer-events: none;
+}
+.agnis-media-box video::-webkit-media-controls {
+    display: none !important;
+}
+.agnis-media-box video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+@media screen and (max-width: 968px) {
+    .agnis-carousel {
+        margin: 0 40px;
+        width: calc(100% - 80px);
+    }
+    .agnis-media-box img,
+    .agnis-media-box video {
+        min-height: 400px;
+        max-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .agnis-carousel {
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .agnis-media-box img,
+    .agnis-media-box video {
+        min-height: 300px;
+        max-height: 50vh;
+    }
 }
 
 /* Responsive adjustments for testimonials */
