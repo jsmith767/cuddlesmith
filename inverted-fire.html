@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Inverted Fire Cuddles - Cuddlesmith</title>
+        <link rel = "stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id = 'header'>
+            <nav class="site-nav">
+                <div class="nav-container">
+                    <div class="nav-logo-section">
+                        <a class="nav-logo" href="index.html" aria-label="Cuddlesmith Home">
+                            <img src="images/Logo.png" alt="Cuddlesmith logo">
+                        </a>
+                    </div>
+                    <button class="hamburger-menu" onclick="openmenu()" aria-label="Open navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu-overlay" id="menu-overlay" onclick="closemenu()"></div>
+                    <ul id="sidemenu">
+                        <li><a href="index.html" onclick="closemenu()">Home</a></li>
+                        <li><a href="inverted-fire.html#about" onclick="closemenu()">About</a></li>
+                        <li><a href="inverted-fire.html#details" onclick="closemenu()">Details</a></li>
+                        <li><a href="inverted-fire.html#contact" onclick="closemenu()">Contact</a></li>
+                        <button class="close-menu" onclick="closemenu()" aria-label="Close navigation menu">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- ------------about----------- -->
+        <div id="about">
+            <div class="container">
+                <h1 class="sub-title">Inverted Fire Cuddles</h1>
+                <p class="about-tagline">A unique, playful, and transformative group cuddle experience inspired by the element of fire.</p>
+                <p>Explore new ways of connecting, releasing, and igniting joy through creative touch and movement. Inverted Fire Cuddles blend structured cuddle practices with dynamic, playful elements that invite you to move, express, and connect in ways that feel both safe and liberating. This experience is designed for those ready to explore touch and connection with more energy, creativity, and spontaneity while maintaining clear boundaries and consent.</p>
+            </div>
+        </div>
+
+        <!-- -----------Details---------- -->
+        <div id="details">
+            <div class="container">
+                <h1 class="sub-title">Details</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-fire"></i>
+                        <h2>Experience Type</h2>
+                        <p>Dynamic group experience combining structured cuddling with movement and play</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <h2>Pricing</h2>
+                        <ul>
+                            <li>$50-$70 per person per session</li>
+                            <li>Sliding scale available</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h2>Location</h2>
+                        <p>Held in a spacious venue that allows for movement. Location details provided upon registration.</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <h2>Duration</h2>
+                        <p>Sessions typically last 3-4 hours, including warm-up, main experience, and integration</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <h2>Scheduling</h2>
+                        <p>Periodic special events. Check the calendar for upcoming dates or contact to inquire about scheduling.</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h2>Guidelines</h2>
+                        <ul>
+                            <li>All participants must agree to group guidelines and code of conduct</li>
+                            <li>Consent is required for all interactions</li>
+                            <li>You can participate at whatever level feels comfortable</li>
+                            <li>Previous experience with group cuddles recommended but not required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------Contact----------     -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i> julian@cuddlesmith.com</p>
+                        <p><i class="fa-solid fa-phone"></i> 206-414-8134</p>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <input type="tel" name="Phone" placeholder="Your Phone">
+                            <input type="text" name="Subscribe" placeholder="Subscribe to our mailing list?">
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright Cuddlesmith. Made with <i class="fa-solid fa-heart"></i></p>
+        </div>
+
+        <script>
+            var sidemenu = document.getElementById('sidemenu');
+            var overlay = document.getElementById('menu-overlay');
+            
+            function openmenu(){
+                sidemenu.classList.add('active');
+                overlay.classList.add('active');
+            }
+            function closemenu(){
+                sidemenu.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw6y3Qxi2D9P10MSsStIpOe4T0bXo8Ghwoinmemi216l117w9Cj_VgobvtH8Ie3Tb8/exec';
+            const form = document.forms['submit-to-google-sheet'];
+            const msg = document.getElementById("msg");
+            const submitButton = document.querySelector('.btn2');
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                submitButton.innerHTML = "Submitting...";
+                submitButton.disabled = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Message sent successfully. We'll be getting back to you shortly! <br>Add julian@cuddlesmith.com to your contact list. Sometimes your email services thinks we're spam!";
+                        setTimeout(function() {
+                            msg.innerHTML = "";
+                        }, 10000);
+
+                        form.reset();
+                        submitButton.innerHTML = "Submit";
+                        submitButton.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        msg.innerHTML = "Error sending message. Please try again.";
+                        
+                        submitButton.innerHTML = "Submit";
+                        submitButton.disabled = false;
+                    });
+            });
+        </script>
+    </body>
+</html>
+

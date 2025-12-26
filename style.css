@@ -26,10 +26,7 @@ body{
 }
 #header{
     width: 100%;
-    min-height: 50vh;
     background: var(--bg-primary);
-    display: flex;
-    align-items: center;
     color: #000;
 }
 .hero-content{
@@ -56,11 +53,13 @@ nav{
     color: var(--text-primary);
 }
 .site-nav{
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background: var(--bg-primary);
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     width: 100%;
     box-sizing: border-box;
 }
@@ -89,35 +88,97 @@ nav{
     width: auto;
     display: block;
 }
-.nav-tagline{
-    font-size: 20px;
-    color: var(--text-primary);
-    margin: 0;
-    font-style: italic;
-    line-height: 1.3;
-}
 .logo{
     width: 120px;
 }
-nav ul{
+.hamburger-menu{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: var(--text-primary);
+    padding: 8px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    z-index: 1001;
     margin-left: auto;
-    flex-shrink: 0;
+}
+.hamburger-menu:hover{
+    opacity: 0.7;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin: 0;
+    padding: 60px 30px 30px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-primary);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+nav ul.active{
+    right: 0;
+}
+.menu-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.menu-overlay.active{
+    opacity: 1;
+    visibility: visible;
 }
 nav ul li{
-    display: inline-block;
+    display: block;
     list-style: none;
     margin: 0;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+nav ul li:last-of-type{
+    border-bottom: none;
 }
 nav ul li a{
     color: #000;
     text-decoration: none;
-    font-size: 30px;
-    position: relative; 
+    font-size: 22px;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.close-menu{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-primary);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-menu:hover{
+    opacity: 0.7;
 }
 nav ul li a::after{
     content: '';
@@ -149,8 +210,15 @@ nav ul li a:hover:after{
 }
 /* ------------about--------- */
 #about{
-    padding: 80px 0;
+    padding: 120px 0 80px;
     color: var(--text-secondary);
+    margin-top: 0;
+}
+.about-tagline{
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-primary);
+    margin: 10px 0 20px;
 }
 .row{
     display: flex;
@@ -229,19 +297,28 @@ nav ul li a:hover:after{
     grid-gap: 40px;
     margin-top: 50px;
 }
-.services-list div{
+.service-card-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.services-list div,
+.service-card-link > div{
     background: var(--bg-secondary);
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
+    cursor: pointer;
 }
-.services-list div i{
+.services-list div i,
+.service-card-link > div i{
     font-size: 50px;
     margin-bottom: 30px;
 }
-.services-list div h2{
+.services-list div h2,
+.service-card-link > div h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
@@ -253,7 +330,8 @@ nav ul li a:hover:after{
     margin-top: 20px;
     display: inline-block;
 }
-.services-list div:hover{
+.services-list div:hover,
+.service-card-link:hover > div{
     background: var(--accent-color);
     transform: translateY(-10px);
 }
@@ -1018,57 +1096,16 @@ form .btn2{
     height: auto;
 }
 /* ---------------css for small screens------- */
-nav .fas{
-    display: none;
-}
 @media only screen and (max-width: 600px){
-    #header{
-        min-height: 50vh;
-        background: linear-gradient(160deg, #640064 0%, #4A90E2 60%, #FFB6C1 100%);
-    }
-    .hero-content{
-        margin-top: 40px;
-        padding: 22px 24px;
-    }
-    .hero-title{
-        font-size: 36px;
-    }
-    .hero-subtitle{
-        font-size: 18px;
-    }
-    .header-text{
-        font-size: 16px;
-        display: none;
-    }
-    .header-text h1{
-        font-size: 30px;
-    }
-    nav .fas{
-        display: block;
-        font-size: 25px;
-    }
     .nav-logo img{
-        height: 38px;
+        height: 60px;
+    }
+    .nav-tagline{
+        font-size: 14px;
     }
     nav ul{
-        background: var(--accent-color);
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-    }
-    nav ul li{
-        display: block;
-        margin: 25px;
-    }
-    nav ul .fas{
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
+        width: 250px;
+        right: -250px;
     }
     .sub-title{
         font-size: 40px;
