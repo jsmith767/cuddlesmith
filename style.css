@@ -65,10 +65,22 @@ nav{
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     background: var(--bg-primary);
     padding: 12px 7%;
     box-shadow: none;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    text-decoration: none;
+}
+.nav-logo img{
+    height: 46px;
+    width: auto;
+    display: block;
 }
 .logo{
     width: 120px;
@@ -1019,6 +1031,9 @@ nav .fas{
     nav .fas{
         display: block;
         font-size: 25px;
+    }
+    .nav-logo img{
+        height: 38px;
     }
     nav ul{
         background: var(--accent-color);
