@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html>
-<body>
-<STYLE>
-<!--
-A{text-decoration:none}
--->
-div.ex1 {
-    margin-left: 1cm; display: none;
-}
-div.ex2 {
-    display: none;
-}
-</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar - Cuddlesmith</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/18933f7f73.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <nav class="site-nav">
+                <div class="nav-container">
+                    <div class="nav-logo-section">
+                        <a class="nav-logo" href="index.html" aria-label="Cuddlesmith Home">
+                            <img src="images/Logo.png" alt="Cuddlesmith logo">
+                        </a>
+                    </div>
+                    <button class="hamburger-menu" onclick="openmenu()" aria-label="Open navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu-overlay" id="menu-overlay" onclick="closemenu()"></div>
+                    <ul id="sidemenu">
+                        <li><a href="index.html" onclick="closemenu()">Home</a></li>
+                        <li><a href="cuddling.html#about" onclick="closemenu()">About</a></li>
+                        <li><a href="cuddling.html#portfolio" onclick="closemenu()">Events</a></li>
+                        <li><a href="cuddling.html#services" onclick="closemenu()">Offerings</a></li>
+                        <li><a href="cuddling.html#cuddler" onclick="closemenu()">Julian</a></li>
+                        <li><a href="FAQ.html" onclick="closemenu()">FAQ</a></li>
+                        <li><a href="cuddling.html#contact" onclick="closemenu()">Contact</a></li>
+                        <button class="close-menu" onclick="closemenu()" aria-label="Close navigation menu">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-<iframe src="https://calendar.google.com/calendar/embed?src=5175ec1c058d2c2b0557db38b329194ec624b32d6e8d406b9d34bcbd91207157%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <div id="embedded-calendar" class="container" style="padding: 120px 0 60px;">
+            <h1 class="sub-title" style="text-align: center;">Calendar</h1>
+            <div style="position:relative; padding-top:10px;">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src=e98c8cdd52ee5115c60ad53513496e3495da75b3595e14730a4e295bc17a908d@group.calendar.google.com&ctz=America/Los_Angeles"
+                    style="border: 1px solid var(--highlight-color); width: 100%; height: 700px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.08);"
+                    frameborder="0"
+                    scrolling="no"></iframe>
+            </div>
+        </div>
 
-</body>
+        <div class="copyright">
+            <p>Copyright Cuddlesmith. Made with <i class="fa-solid fa-heart"></i></p>
+        </div>
+
+        <script>
+            var sidemenu = document.getElementById('sidemenu');
+            var overlay = document.getElementById('menu-overlay');
+            function openmenu() {
+                sidemenu.classList.add('active');
+                overlay.classList.add('active');
+            }
+            function closemenu() {
+                sidemenu.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        </script>
+    </body>
 </html>
