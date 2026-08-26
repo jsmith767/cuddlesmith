@@ -321,6 +321,30 @@
             }
             .ap-subscribe-submit:hover { opacity: 0.85; }
 
+            /* ---- Support ---- */
+            #ap-support { padding: 60px 0; }
+            .ap-support-buttons {
+                display: flex;
+                gap: 16px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+            .ap-support-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 14px 28px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+            }
+            .ap-support-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+            .ap-support-givebutter { background: var(--ap-accent); color: #fff; }
+            .ap-support-venmo { background: #3D95CE; color: #fff; }
+
             /* ---- Lightbox ---- */
             #ap-lightbox {
                 display: none;
@@ -387,6 +411,7 @@
                         <li><a href="AGNIS.html#ap-builder" onclick="closemenu()">The Builder</a></li>
                         <li><a href="AGNIS.html#ap-history" onclick="closemenu()">History</a></li>
                         <li><a href="AGNIS.html#ap-subscribe" onclick="closemenu()">Subscribe</a></li>
+                        <li><a href="AGNIS.html#ap-support" onclick="closemenu()">Support</a></li>
                         <li><a href="AGNIS.html#ap-contact" onclick="closemenu()">Contact</a></li>
                         <button class="close-menu" onclick="closemenu()" aria-label="Close navigation menu">
                             <i class="fas fa-times"></i>
@@ -569,6 +594,22 @@
                 <div class="row-success" style="display: none;">
                     <h1 class="sub-title">Thank You!</h1>
                     <p style="color: var(--text-secondary);">You're on the list — you'll hear about upcoming events and improvements to AGNIS.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div id="ap-support">
+            <div class="container" style="text-align: center;">
+                <h1 class="sub-title">Support AGNIS</h1>
+                <p style="color: var(--text-secondary); margin-bottom: 28px; line-height: 1.8;">I'm always upgrading AGNIS — new systems, repairs, travel. Festivals and other gatherings cover some costs, but not close to supporting the countless hours that go into building and maintaining her, so donations directly help keep this container out in the world for people to experience.</p>
+                <div class="ap-support-buttons">
+                    <a href="https://givebutter.com/AGNIS" class="ap-support-btn ap-support-givebutter" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Give via Givebutter
+                    </a>
+                    <a href="https://venmo.com/u/SmithInPractice" class="ap-support-btn ap-support-venmo" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-venmo"></i> Venmo @SmithInPractice
+                    </a>
                 </div>
             </div>
         </div>
