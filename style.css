@@ -231,6 +231,7 @@ nav ul li a:hover:after{
 .about-col-1 img{
     width: 100%;
     height: 60vh;/*might be bad for mobile?*/
+    object-fit: cover;
     border-radius: 15px;
 }
 .about-col-2{

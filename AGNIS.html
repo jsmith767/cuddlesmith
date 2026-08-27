@@ -489,13 +489,10 @@
                                 <img src="images/DayWwaterAGNIS.jpg" alt="AGNIS with water, daytime">
                             </div>
                             <div class="ap-media-box">
-                                <img src="images/NightFire.jpg" alt="AGNIS fire effect at night">
-                            </div>
-                            <div class="ap-media-box">
                                 <img src="images/NightWaterAGNIS.jpg" alt="AGNIS with water at night">
                             </div>
                             <div class="ap-media-box">
-                                <video playsinline muted loop autoplay id="ap-firemove-video">
+                                <video playsinline muted loop autoplay id="ap-firemove-video" style="object-position: center 37%;">
                                     <source src="images/FireMove.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -809,7 +806,7 @@
                     });
                     [
                         { id: 'ap-agnis-video', slide: 0 },
-                        { id: 'ap-firemove-video', slide: 5 }
+                        { id: 'ap-firemove-video', slide: 4 }
                     ].forEach(({ id, slide }) => {
                         const v = document.getElementById(id);
                         if (!v) return;
