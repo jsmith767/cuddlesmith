@@ -647,6 +647,37 @@
                 sidemenu.classList.remove('active');
                 overlay.classList.remove('active');
             }
+
+            // Native #hash scrolling only fires when the URL's hash actually
+            // changes, so re-clicking the same nav link (or re-scanning a QR
+            // code into an already-open tab) silently does nothing the second
+            // time. Drive it manually instead so it fires every time.
+            function apScrollToHash(hash) {
+                if (!hash) return;
+                var target = document.querySelector(hash);
+                if (!target) return;
+                var navOffset = window.innerWidth <= 600 ? 100 : 140;
+                var top = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+
+            document.querySelectorAll('#sidemenu a[href^="#"]').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var hash = link.getAttribute('href');
+                    closemenu();
+                    if (history.pushState) { history.pushState(null, '', hash); }
+                    apScrollToHash(hash);
+                });
+            });
+
+            // Fresh load or QR-code scan landing with a hash already in the URL.
+            function apScrollToCurrentHash() {
+                if (location.hash) { apScrollToHash(location.hash); }
+            }
+            window.addEventListener('load', apScrollToCurrentHash);
+            // Fires on bfcache restores / tab-reuse cases where 'load' won't fire again.
+            window.addEventListener('pageshow', apScrollToCurrentHash);
         </script>
 
         <script>
