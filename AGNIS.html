@@ -288,6 +288,7 @@
                 .ap-timeline::before { left: 18px; }
                 .ap-tl-dot { left: 16px; transform: none; }
                 .ap-tl-connector { display: none; }
+                .ap-tl-card:hover { transform: none; box-shadow: 0 2px 10px rgba(0,0,0,0.08); z-index: auto !important; }
             }
 
             /* ---- Subscribe ---- */
@@ -696,34 +697,84 @@
                 btn.textContent = collapsed ? 'See Full History' : 'Collapse';
             }
 
+            let apTimelineEvents = null;
+
             async function apBuildTimeline() {
                 const PX_PER_MONTH = 22;
                 const PAD_TOP    = 40;
                 const PAD_BOTTOM = 80;
                 const ROW_GAP    = 16;
-                const COL_GAP    = 10;
-                const NEAR       = 20;
-                const OUTER_PAD  = 20;
-                const tl = document.getElementById('ap-timeline');
-                const containerW = document.querySelector('#ap-history .container')?.offsetWidth
-                                   || tl.parentElement?.offsetWidth
-                                   || 960;
-                const halfW      = containerW / 2;
-                const CARD_W     = Math.max(100, Math.floor((halfW - NEAR - OUTER_PAD - 2 * COL_GAP) / 3));
-                const CARD_H     = Math.round(CARD_W * 0.75) + 70;
-                const MID        = NEAR + CARD_W + COL_GAP;
-                const FAR        = MID  + CARD_W + COL_GAP;
                 const DOT_R      = 6;
+                const tl = document.getElementById('ap-timeline');
+                // The wrapper has no padding of its own, so its offsetWidth is the
+                // actual space available to the timeline (unlike .container, whose
+                // offsetWidth includes its own left/right padding).
+                const containerW = tl.parentElement?.offsetWidth
+                                   || document.querySelector('#ap-history .container')?.offsetWidth
+                                   || 960;
+                const isMobile = window.innerWidth <= 768;
 
-                const res = await fetch('AGNIS-events.json', { cache: 'no-store' });
-                const events = await res.json();
+                if (!apTimelineEvents) {
+                    const res = await fetch('AGNIS-events.json', { cache: 'no-store' });
+                    apTimelineEvents = await res.json();
+                }
+                const events = apTimelineEvents;
 
                 const toMs = d => new Date(d.length === 7 ? d + '-01' : d).getTime();
                 const minMs = toMs(events[0].date);
                 const msPerMonth = 1000 * 60 * 60 * 24 * 30.44;
 
-                const placed = { left: [], right: [] };
+                tl.innerHTML = '';
                 let maxBottom = 0;
+
+                if (isMobile) {
+                    // Single column, cards to the right of the left-aligned line
+                    // (the line itself moves to left:18px via the 768px media query).
+                    const CARD_LEFT = 40;
+                    const OUTER_PAD = 16;
+                    const CARD_W = Math.max(140, containerW - CARD_LEFT - OUTER_PAD);
+                    const CARD_H = Math.round(CARD_W * 0.75) + 70;
+                    let lastBottom = -Infinity;
+
+                    events.forEach((ev, i) => {
+                        const months = (toMs(ev.date) - minMs) / msPerMonth;
+                        let top = PAD_TOP + months * PX_PER_MONTH;
+                        if (top < lastBottom + ROW_GAP) top = lastBottom + ROW_GAP;
+                        lastBottom = top + CARD_H;
+                        maxBottom = Math.max(maxBottom, lastBottom);
+
+                        const dot = document.createElement('div');
+                        dot.className = 'ap-tl-dot';
+                        dot.style.top = top + 'px';
+                        tl.appendChild(dot);
+
+                        const card = document.createElement('div');
+                        card.className    = 'ap-tl-card';
+                        card.style.top    = top + 'px';
+                        card.style.left   = CARD_LEFT + 'px';
+                        card.style.width  = CARD_W + 'px';
+                        card.style.zIndex = i + 10;
+                        card.innerHTML = (ev.image
+                            ? `<img src="${ev.image}" alt="${ev.label}" style="object-position:${ev.imagePosition || 'center'}" onclick="apOpenLightbox('${ev.image}','${ev.label.replace(/'/g,"\\'")}');event.stopPropagation()">`
+                            : `<div class="ap-tl-placeholder"></div>`)
+                            + `<div class="ap-tl-card-text"><h3>${ev.label}</h3><p>${ev.text}</p></div>`;
+                        tl.appendChild(card);
+                    });
+
+                    tl.style.height = Math.ceil(maxBottom + PAD_BOTTOM) + 'px';
+                    return;
+                }
+
+                const COL_GAP    = 10;
+                const NEAR       = 20;
+                const OUTER_PAD  = 20;
+                const halfW      = containerW / 2;
+                const CARD_W     = Math.max(100, Math.floor((halfW - NEAR - OUTER_PAD - 2 * COL_GAP) / 3));
+                const CARD_H     = Math.round(CARD_W * 0.75) + 70;
+                const MID        = NEAR + CARD_W + COL_GAP;
+                const FAR        = MID  + CARD_W + COL_GAP;
+
+                const placed = { left: [], right: [] };
 
                 events.forEach((ev, i) => {
                     const months = (toMs(ev.date) - minMs) / msPerMonth;
@@ -785,6 +836,23 @@
             } else {
                 apBuildTimeline();
             }
+
+            // Rebuild if the viewport crosses the mobile/desktop breakpoint
+            // (rotation, resizing a browser window), not on every pixel of resize.
+            (function () {
+                let wasMobile = window.innerWidth <= 768;
+                let resizeTimer = null;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        const nowMobile = window.innerWidth <= 768;
+                        if (nowMobile !== wasMobile) {
+                            wasMobile = nowMobile;
+                            apBuildTimeline();
+                        }
+                    }, 200);
+                });
+            })();
         </script>
 
         <script>
